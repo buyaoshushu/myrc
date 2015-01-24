@@ -1,0 +1,8 @@
+Host code.jd.com
+     Hostname code.jd.com
+     User git
+     IdentityFile ~/.ssh/ponderI
+Host github.com
+     Hostname github.com
+     User git
+     IdentityFile ~/.ssh/ponderI
