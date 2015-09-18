@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config"
 alias gufeng='find /media/others/KuGou/古风/| grep mp3 | shuf > /tmp/mp3.lst;mpv --playlist=/tmp/mp3.lst'
 alias kugou='find /media/others/KuGou/| grep mp3 | shuf > /tmp/mp3.lst;mpv --playlist=/tmp/mp3.lst'
 alias ls='ls --color=auto'
@@ -21,11 +22,13 @@ alias rsmv="rsync -ahP --remove-source-files"
 alias rscp="rsync -ahP"
 alias screenbg="find /home/kerwin/Downloads/screen/ | shuf | head -1 | xargs -I{} feh --bg-scale {}"
 alias i3lock="i3lock -c 000000"
+alias vi="vim"
+alias closetauchpad="synclient TouchpadOff=1"
 PS1='[\u@\h \W]\$ '
 export JAVA_HOME=~/jdk
-export PATH=$PATH:$JAVA_HOME/bin:/home/kerwin/bin:/home/kerwin/android-sdk-linux/platform-tools
-export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:/home/kerwin/bin:/home/kerwin/android-sdk-linux/platform-tools:/home/kerwin/hackapk/jd-gui
 
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 export NVM_DIR="/home/kerwin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -40,3 +43,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;33m'
+export GDK_USE_XFT=1
+export QT_XFT=true
+export GOPATH=~/go
+export PATH=$PATH:~/go/bin

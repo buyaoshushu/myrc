@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+font pango:Noto Sans Mono 12
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -171,6 +171,8 @@ for_window [instance="skype"] floating enable
 for_window [instance="QIpmsg"] floating enable
 for_window [instance="Pidgin"] floating enable
 for_window [instance="gpick"] floating enable
+for_window [instance="Tasque"] floating enable
+assign [class="VirtualBox"] 7
 assign [instance="skype"] 4
 assign [instance="QIpmsg"] 4
 assign [instance="Pidgin"] 4
@@ -182,4 +184,5 @@ exec tilda
 exec tilda
 exec tilda
 exec gpick
+exec tasque
 exec /home/kerwin/QIpmsg
