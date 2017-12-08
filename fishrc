@@ -51,7 +51,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/kerwin/.vimpkg/bin:/home/kerwin/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -75,7 +75,7 @@ alias closescreen2="xrandr --output HDMI1 --off"
 alias openscreen2="xrandr --output HDMI1 --mode 1920x1080 --left-of LVDS1"
 alias rsmv="rsync -ahP --remove-source-files"
 alias rscp="rsync -ahP"
-alias screenbg="find /home/kerwin/screen/ | shuf | head -1 | xargs -I{} feh --bg-scale {}"
+alias screenbg="find /home/kerwin/Downloads/screen/ | shuf | head -1 | xargs -I{} feh --bg-scale {}"
 alias i3lock="i3lock -c 000000"
 alias vi="vim"
 alias closetauchpad="synclient TouchpadOff=1"
@@ -145,7 +145,3 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/kerwin/.sdkman"
-[[ -s "/home/kerwin/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kerwin/.sdkman/bin/sdkman-init.sh"

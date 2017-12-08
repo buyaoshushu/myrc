@@ -30,9 +30,9 @@ fcitx &
 xset s 3600 3600
 xset dpms 3600 3600 3600
 #exec enlightenment_start
-#exec startkde
+exec startkde
 #exec startlxde
-exec awesome
+#exec awesome
 find /home/kerwin/Downloads/screen/ | shuf | head -1 | xargs -I{} feh --bg-scale {}
 #xmodmap -e "remove Lock = Caps_Lock"
 #xmodmap -e "keysym Caps_Lock = KP_Enter"
