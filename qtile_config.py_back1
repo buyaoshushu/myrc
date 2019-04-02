@@ -29,8 +29,6 @@ from libqtile import layout, bar, widget, notify
 from libqtile.config import EzClick as Click, EzDrag as Drag
 from libqtile.config import EzKey as Key
 import re
-
-
 mod = "mod4"
 
 keys = [
@@ -190,44 +188,6 @@ screens = [
             30,
         ),
     ),
-    Screen(
-        top=bar.Bar(
-            [
-                widget.GroupBox(disable_drag=True),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Notify(),
-                widget.CPUGraph(
-                    graph_color=color_alert,
-                    fill_color='{}.5'.format(color_alert),
-                    border_color=color_frame,
-                    line_width=2,
-                    border_width=1,
-                    samples=60,
-                ),
-                widget.MemoryGraph(
-                    graph_color=color_alert,
-                    fill_color='{}.5'.format(color_alert),
-                    border_color=color_frame,
-                    line_width=2,
-                    border_width=1,
-                    samples=60,
-                ),
-                widget.NetGraph(
-                    graph_color=color_alert,
-                    fill_color='{}.5'.format(color_alert),
-                    border_color=color_frame,
-                    line_width=2,
-                    border_width=1,
-                    samples=60,
-                ),
-                widget.Volume(),
-                widget.TextBox("ponderI", name="hostname"),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-            ],
-            30,
-        ),
-    )
 ]
 
 # Drag floating layouts.

@@ -24,7 +24,8 @@ alias rsmv "rsync -ahP --remove-source-files"
 alias rscp "rsync -ahP"
 alias screenbg "find /home/kerwin/screen/ | shuf | head -1 | xargs feh --bg-scale "
 alias i3lock "i3lock -c 000000"
-alias e "emacs -nw"
+alias e "emacsclient -nw"
+alias ec "emacsclient"
 alias closetauchpad "synclient TouchpadOff=1"
 alias y "yaourt"
 alias yr "yaourt -R"
@@ -33,9 +34,11 @@ alias gv "gvim"
 alias t "task"
 alias tintingbk "luit -x -encoding gbk tintin"
 alias t++ "luit -x -encoding gbk tintin"
+alias myscrot "scrot ~/Pictures/Screenshots/%Y%m%d%H%M%S.png"
 set TERM "screen-256color"
 set JAVA_HOME /home/kerwin/jdk
 set EDITOR "vim"
+set GEEKNOTE_BASE yinxiang
 set CLASSPATH .:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 set NVM_DIR "/home/kerwin/.nvm"
 set ANDROID_HOME /home/kerwin/adt-bundle/sdk/
@@ -43,7 +46,11 @@ set -x LANG en_US.UTF-8
 set LANGUANG zh_CN:en_US
 set LC_CTYPE zh_CN.UTF-8
 set BROWSER w3m
-set PATH $PATH /home/kerwin/.vimpkg/bin/ /home/kerwin/.gem/ruby/2.3.0/bin /home/kerwin/bin
+set PATH $PATH /home/kerwin/.vimpkg/bin/ /home/kerwin/.gem/ruby/2.3.0/bin /home/kerwin/bin /home/kerwin/git/maintainer-quality-tools/travis
+
+set VISUAL emacsclient
+export GEEKNOTE_BASE=yinxiang
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 function yd
     ydcv $argv | tee ~/newword
 end

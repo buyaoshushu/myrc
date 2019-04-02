@@ -1,21 +1,33 @@
 [general]
-accounts = myaccount # change to whatever you want
-ui = Curses.Blinkenlights # Gives you a nice blinky output on the console so you know what's happening.
+accounts = zhengyi 
+# change to whatever you want
+#ui = Curses.Blinkenlights # Gives you a nice blinky output on the console so you know what's happening.
 # ui = Noninteractive.Quiet # If uncommented, this would show nothing at all. Great for cronjobs or background-processes
 
-[Account myaccount]
-localrepository = mylocal # Profile-Name for the local Mails for a given Account
-remoterepository = myremote # Profile-Name for the remote Mails for a given Account
-autorefresh = 5 # fetches your mails every 5 Minutes
+[Account zhengyi]
+localrepository = zhengyilocal 
+# Profile-Name for the local Mails for a given Account
+remoterepository = zhengyiremote 
+# Profile-Name for the remote Mails for a given Account
+#autorefresh = 5 # fetches your mails every 5 Minutes
+utf8foldernames = yes
+decodefoldernames = yes
+[Repository zhengyilocal]
+type = Maildir 
+# Way of storing Mails locally. Only Maildir is currently supported
+localfolders = ~/Mail 
+# Place where the synced Mails should be
 
-[Repository mylocal]
-type = Maildir # Way of storing Mails locally. Only Maildir is currently supported
-localfolders = ~/Mail # Place where the synced Mails should be
-
-[Repository myremote]
-type = IMAP # Type of remote Mailbox. Only IMAP is supported right now.
-remotehost = imap.myhost.com # Where to connect
-ssl = yes # Whether to use SSL or not
-# remoteport = 993 # Would specify a port if uncommented. That way, it just tries to use a default-port
-remoteuser = myremoteusername # Login-Name
-remotepass = myremotepassword # Login-Password. -- ACHTUNG! Of course, this is not too safe. Make sure that the file is readable only by you. Even better: use some of the suggestions in the OfflineIMAP-Manual to make it safer.
+[Repository zhengyiremote]
+type = IMAP 
+# Type of remote Mailbox. Only IMAP is supported right now.
+remotehost = imap.ym.163.com 
+# Where to connect
+ssl = no
+# Whether to use SSL or not
+#remoteport = 993 
+# Would specify a port if uncommented. That way, it just tries to use a default-port
+remoteuser = zhengyi@qingsongguan.com 
+# Login-Name
+remotepass = asdfasdf 
+# Login-Password. -- ACHTUNG! Of course, this is not too safe. Make sure that the file is readable only by you. Even better: use some of the suggestions in the OfflineIMAP-Manual to make it safer.

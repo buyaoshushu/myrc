@@ -13,8 +13,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 12
+font pango:DejaVu 10
+new_window 1pixel
 
+#hide_edge_borders smart
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -31,22 +33,24 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id lilyterm
+# terminology
 # KILL focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
+bindsym $mod+d exec --no-startup-id dmenu_run -nb "#002b36"
+#bindsym $mod+Ctrl+l exec --no-startup-id launchy
+# There also is the (new) i2-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+shift+f exec --no-startup-id firefox
-bindsym $mod+shift+s exec --no-startup-id emacs
+#bindsym --exclude-titlebar $mod+shift+f exec --no-startup-id firefox
+#bindsym --exclude-titlebar $mod+shift+s exec --no-startup-id emacs
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -55,10 +59,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+e move up
+bindsym $mod+Shift+i move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -67,10 +71,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Ctrl+2 split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Ctrl+3 split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -78,7 +82,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -127,11 +131,11 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Ctrl+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -170,9 +174,12 @@ for_window [instance="QQ.exe"] border none
 for_window [instance="YY.exe"] floating enable
 for_window [instance="QIpmsg"] floating enable
 for_window [instance="TeamViewer"] floating enable
-for_window [class="LilyTerm"] layout tabbed
+for_window [instance="netease-cloud-music"] floating enable
+#for_window [class="LilyTerm"] layout tabbed
+#for_window [class="terminology"] layout tabbed
 for_window [class="VirtualBox"] layout tabbed
 assign [class="LilyTerm"] $WS1
+assign [class="terminology"] $WS1
 assign [class="Thunar"] $WS1
 assign [class="Firefox"] $WS2
 assign [class="Seamonkey"] $WS2
@@ -180,22 +187,23 @@ assign [class="Emacs"] $WS3
 assign [class="jetbrains-idea"] $WS4
 assign [class="VirtualBox"] $WS5
 assign [class="rdesktop"] $WS5
+assign [class="conkeror"] $WS5
 assign [class="netease-cloud-music"] $WS6
 assign [class="mpv"] $WS6
 
 #**************************************************主题设置*********************************************
 # 窗口颜色                边框    背景    文字    提示
-client.focused          #333333 #333333 #FFFFFF #333333
-client.focused_inactive #999999 #999999 #FFFFFF #3399FF
-client.unfocused        #999999 #999999 #FFFFFF #3399FF
-client.urgent           #990000 #990000 #FFFFFF #990000
-client.placeholder      #000000 #000000 #FFFFFF #000000
-client.background       #FFFFFF
+client.focused          #002B36 #fdf6e3 #2aa198 #333333
+client.focused_inactive #002B36 #002B36 #2aa198 #3399FF
+client.unfocused        #002B36 #002B36 #FFFFFF #3399FF
+client.urgent           #002B36 #002B36 #FFFFFF #990000
+client.placeholder      #002B36 #002B36 #FFFFFF #000000
+client.background       #002B36
 
 #i3bar设置
 bar {
     i3bar_command i3bar -t
-    height 28
+    height 20
     #禁止systemtray
     #tray_output none
     # i3bar调用
@@ -207,18 +215,18 @@ bar {
     # 拆解工作区名（隐藏前面的1:2:3:……）
     strip_workspace_numbers yes
     # 定义分隔符∥
-    separator_symbol "    "
+    separator_symbol "  "
 
     colors {
-        background #10101000
+        background #002B36
         statusline #FFFFFF
         separator  #3399FF
         # 工作区颜色         边框    背景    文字
-        focused_workspace  #3297FD #11111100 #FFFFFF
-        active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
-        inactive_workspace #111111 #11111100 #FFFFFF
-        urgent_workspace   #990000 #11111100 #FFFFFF
-        binding_mode       #990000 #99000000 #FFFFFF
+        focused_workspace  #3297FD #002B36 #FFFFFF
+        active_workspace   #002B36 #002B36 #FFFFFF
+        inactive_workspace #002B36 #002B36 #FFFFFF
+        urgent_workspace   #002B36 #002B36 #FFFFFF
+        binding_mode       #002B36 #990000 #FFFFFF
     }
 }
 
