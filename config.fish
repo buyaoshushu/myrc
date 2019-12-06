@@ -3,6 +3,7 @@
 # Customize Oh My Fish configuration path.
 #set -gx OMF_CONFIG "/home/kerwin/.config/omf"
 set fish_greeting '苟利国家生死以，岂因祸福避趋之。'
+fish_vi_key_bindings
 # Load oh-my-fish configuration.
 #set PATH "$HOME/bin:/usr/local/bin:$PATH"
 thefuck --alias | source 
@@ -16,10 +17,10 @@ alias ll 'ls -al'
 alias liuxing "find /media/others/KuGou/流行/| grep mp3 | shuf > /tmp/mp3.lst;mpv --playlist=/tmp/mp3.lst"
 alias chenyixun 'find /media/others/陈奕迅无损/ | shuf > /tmp/mp3.lst;mpv --playlist=/tmp/mp3.lst'
 alias volume "amixer -D pulse set Master"
-alias closescreen "xrandr --output LVDS1 --off"
-alias openscreen "xrandr --output LVDS1 --mode 1366x768 --right-of HDMI1"
-alias closescreen2 "xrandr --output HDMI1 --off"
-alias openscreen2 "xrandr --output HDMI1 --mode 1920x1080 --left-of LVDS1"
+alias closescreen "xrandr --output DP-0 --off"
+alias openscreen "xrandr --output DP-0 --mode 1920x1080 --right-of HDMI-0"
+alias closescreen2 "xrandr --output HDMI-0 --off"
+alias openscreen2 "xrandr --output HDMI-0 --mode 1920x1080 --left-of DP-0"
 alias rsmv "rsync -ahP --remove-source-files"
 alias rscp "rsync -ahP"
 alias screenbg "find /home/kerwin/screen/ | shuf | head -1 | xargs feh --bg-scale "
